@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dayflow</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Cross-platform preview</p>
+      <h1>Dayflow — Electron Edition</h1>
+      <p class="lede">Capture your screen at 1 FPS, group clips every 15 minutes, and build a privacy-first activity timeline on macOS, Windows, or Linux.</p>
+    </div>
+    <div class="cta-group">
+      <button id="toggleCapture" class="primary">Start capture</button>
+      <button id="addMarker" class="ghost">Add marker</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Live feed</p>
+          <h2>Current capture</h2>
+        </div>
+        <div class="chip" id="captureStatus">Idle</div>
+      </div>
+      <div class="live-view">
+        <img id="liveThumbnail" alt="Latest capture" />
+        <div class="live-meta">
+          <p id="liveTitle">Waiting to capture…</p>
+          <p id="liveSubtitle" class="muted"></p>
+        </div>
+      </div>
+      <div class="metrics">
+        <div>
+          <p class="eyebrow">Frames</p>
+          <p class="metric-value" id="frameCount">0</p>
+        </div>
+        <div>
+          <p class="eyebrow">Markers</p>
+          <p class="metric-value" id="markerCount">0</p>
+        </div>
+        <div>
+          <p class="eyebrow">15-min blocks</p>
+          <p class="metric-value" id="blockCount">0</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Timeline</p>
+          <h2>Your day</h2>
+        </div>
+      </div>
+      <div id="timeline" class="timeline"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Dayflow now runs cross‑platform via Electron. Captures stay on-device and timelines never leave your machine.</p>
+  </footer>
+
+  <script type="module" src="renderer.js"></script>
+</body>
+</html>

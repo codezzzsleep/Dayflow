@@ -5,7 +5,7 @@
 
 <div align="center">
   <em>A timeline of your day, automatically.</em><br>
-  Turns your screen activity into a clean timeline with AI summaries and distraction highlights.
+  Now rebuilt with <strong>Electron</strong> so the same experience runs on macOS, Windows, and Linux.
 </div>
 
 <div align="center">
@@ -67,8 +67,34 @@ Dayflow stands for ownership and privacy by default. You control the data, you c
 - **Watch timelapses of your day**.
 - **Auto storage cleanup** - removes old recordings after 3 days.
 - **Distraction highlights** to see what pulled you off‑task.
-- **Native UX** built with **SwiftUI**.
+- **Cross-platform Electron UI** (macOS, Windows, Linux).
 - **Auto‑updates** with **Sparkle** (daily check + background download).
+
+## Quickstart (Electron)
+
+The SwiftUI prototype has been reimplemented in Electron for cross-platform support.
+
+```bash
+npm install
+npm start
+```
+
+### Repository layout (where to find the code)
+
+- `Dayflow/` — the original SwiftUI macOS app source (with `DayflowTests/` and `DayflowUITests/`).
+- `electron/` — the cross-platform Electron build (main, preload, renderer, and styles).
+- `docs/` — marketing assets and screenshots referenced in this README.
+- `scripts/` — helper scripts for builds and packaging.
+- `docs/pushing.md` — how to push the current branch to your own remote.
+
+If you open the repo root in an editor, you should see both the Swift project under `Dayflow/` and the Electron app under `electron/`.
+
+What you get today:
+
+- A live 1 FPS screen capture loop using the Electron `desktopCapturer` API.
+- Automatic grouping of frames into 15-minute timeline blocks with thumbnail previews.
+- Marker buttons to annotate your day while recording.
+- A dark, desktop-friendly UI that mirrors the native Dayflow layout.
 
 ### Coming soon
 

@@ -21,3 +21,7 @@ claude.md
 # Tauri migration (WIP)
 dayflow-tauri/
 agents.md
+node_modules/
+dist/
+out/
+npm-debug.log
